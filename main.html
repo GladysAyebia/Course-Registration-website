@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sevillana&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Tuition School</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    
+        <nav class="nav-bar">
+            <div class="logo">
+                <a href="#">ITschool</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </nav>
+
+        <div class="video-container">
+            <video id="background-video" loop autoplay muted>
+                <source src="Accerts\Developer Coding Background.mp4" type="video/mp4">
+            </video>
+
+    
+            <div class="overlay-message">
+                <p>You can't become a guru overnight. This is a journey of constant practice and a steep learning curve...</p>
+            </div>
+
+        </div>
+
+
+    <button id="registerBtn">Register for a Course</button>
+
+    <!-- Registration Form (Initially Hidden) -->
+    <div id="registrationForm" style="display:none;">
+        <h2>Register Now</h2>
+        <form id="courseRegistration">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="course">Course:</label>
+            <select id="course" name="course" required>
+                <option value="webDevelopment">Web Development</option>
+                <option value="dataScience">Data Science</option>
+                <option value="cyberSecurity">Cyber Security</option>
+            </select><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
