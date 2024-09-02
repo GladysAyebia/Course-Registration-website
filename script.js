@@ -1,9 +1,8 @@
-// script.js
-
 document.getElementById("registerBtn").addEventListener("click", function() {
-    document.getElementById("registrationForm").style.display = "block";
+    const registrationForm = document.getElementById("registrationForm");
+    if (registrationForm.style.display === "none" || registrationForm.style.display === "") {
+        registrationForm.style.display = "block";
+    } else {
+        registrationForm.style.display = "none";
+    }
 });
-
-
-
-// Optionally, you can add more JavaScript to handle form submission and validation.
