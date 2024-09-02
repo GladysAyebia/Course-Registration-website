@@ -1,47 +1,31 @@
-/* You can add this in a <style> tag in the HTML or a separate CSS file */
-
 body {
     font-family: Arial, sans-serif;
-    margin: 0px;
+    margin: 0;
 }
 
 h1, h2 {
     color: #333;
 }
+
 .nav-bar {
     background-color: #37276c;
     padding: 1em;
     display: flex;
     align-items: center;
-    height: 100%;
-    position: relative;
-    gap: 300px;
-    
+}
+.logo{
+    font-size: 45px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: 370px;
+    padding: 20px;
 }
 
-.nav-links li{
-    display: flex;
-    list-style: none;
-    left: 100px !important;
+.nav-links li {
     margin-left: 30px;
-}
-
-.logo a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 3.3em;
-}
-
-.nav-bar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.nav-bar li {
-    margin-right: 25px;
-    padding: unset;
+    padding: 20px;
 }
 
 .nav-bar a {
@@ -70,7 +54,6 @@ h1, h2 {
     object-fit: cover;
 }
 
-
 .overlay-message {
     position: absolute;
     top: 50%;
@@ -87,13 +70,7 @@ h1, h2 {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: italic;
-      }
-      
-
-.overlay-message p {
-    margin: 0;
 }
-
 
 button {
     background-color: #4CAF50;
@@ -101,34 +78,36 @@ button {
     padding: 20px 40px;
     border: none;
     cursor: pointer;
-    margin-left: 550px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
+    margin: 50px auto;
     display: flex;
+    text-align: center;
 }
 
-#registerBtn{
-    margin-top: 50px;
-    position: relative;
-}
 
 button:hover {
     background-color: #45a049;
 }
 
-form {
-    margin-top: 20px;
-
+.centered-form {
+    position: relative;
+    top: 250px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    display: none;
 }
 
 label {
-    display: inline-block;
-    width: 100px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 input, select {
     padding: 5px;
-    margin-bottom: 10px;
-    width: 200px;
+    width: 100%;
+    margin-bottom: 15px;
 }
