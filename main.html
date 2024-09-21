@@ -4,59 +4,183 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Sevillana&display=swap" rel="stylesheet">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Tuition School</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
     <nav class="nav-bar">
         <div class="logo">
-            <a href="#">ITschool</a>
+            <h1>SkaiTech</h1>
         </div>
-        <ul class="nav-links">
+
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
+            <li><a href="#">Courses</a></li>
             <li><a href="#">Contact us</a></li>
-            <li><a href="#">FAQ</a></li>
         </ul>
+
     </nav>
 
     <div class="video-container">
         <video id="background-video" loop autoplay muted>
-            <source src="assets/Developer Coding Background.mp4" type="video/mp4">
+            <source src="Accerts/Developer Coding Background.mp4" type="video/mp4">
         </video>
-
         <div class="overlay-message">
             <p>You can't become a guru overnight. This is a journey of constant practice and a steep learning curve...</p>
         </div>
     </div>
 
-    <button id="registerBtn">Register for a Course</button>
 
-    <!-- Registration Form (Initially Hidden) -->
-    <div id="registrationForm" class="centered-form" >
+<!--Courses Offered-->
+
+<h2 class="title">Courses we offer</h2>
+   
+
+<div class="divider-horizontal"></div>
+<!--Web development-->
+
+
+<div clas="courses">
+
+     <div class="course_card">
+
+        <div class="course_img">
+<img src="Accerts/WebDev1.png" height="300px" width="520px" >
+        </div>
+
+
+        <div class="course_description">
+    
+    <h2 top="20px">Web Development</h2>        
+    <p class="description"> Description: Learn how to create modern, responsive websites and web applications using HTML, CSS, JavaScript, and frameworks like React or Angular.</p>
+    <p class="skills">Skills:Frontend development (HTML, CSS, JavaScript), Backend development (Node.js, databases), Responsive design, Version control (Git)</p>  
+    <p class="duration">Duration: 6 months</p>
+
+    <button id="registerBtnWebDev">Register for this Course</button>
+
+    <div id="registrationFormWebDev" class="centered-form" style="display:none;">
         <h2>Register Now</h2>
         <form id="courseRegistration">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br><br>
-
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required><br><br>
-
-            <label for="course">Course:</label>
-            <select id="course" name="course" required>
-                <option value="webDevelopment">Web Development</option>
-                <option value="dataScience">Data Science</option>
-                <option value="cyberSecurity">Cyber Security</option>
-            </select><br><br>
-
+        
             <button type="submit">Submit</button>
         </form>
     </div>
 
+        </div>
+    </div>
+
+    
+<!--Data Science-->
+
+
+<div class="course_card">
+
+    <div class="course_img">
+<img src="Accerts/DataSc.png" height="300px" width="520px" >
+    </div>
+
+
+    <div class="course_description">
+
+<h2 top="20px">Data Science</h2>        
+<p class="description">Description: Understand how to analyze and interpret data, apply machine learning algorithms, and create data-driven solutions.</p>
+<p class="skills">Skills:Data analysis (Python, R, SQL), Machine learning (scikit-learn, TensorFlow), Data visualization (Matplotlib, Seaborn), Statistical modeling</p>  
+<p class="duration">Duration: 6 months</p>
+
+
+<button id="registerBtnDataSci">Register for this Course</button>
+
+<div id="registrationFormDataSci" class="centered-form" style="display:none;">
+    <h2>Register Now</h2>
+    <form id="courseRegistration">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+    
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+    </div>
+</div>
+
+
+<!--Cyber Security-->
+
+
+<div class="course_card">
+
+    <div class="course_img">
+<img src="Accerts/CyberSec.png" height="300px" width="520px" >
+    </div>
+
+
+    <div class="course_description">
+
+<h2 top="20px">Cyber Security</h2>        
+<p class="description">Description: Gain knowledge in protecting networks, applications, and data from threats by learning about security principles and ethical hacking. </p>
+<p class="skills">Skills: Network security, 
+    Ethical hacking and penetration testing, 
+    Encryption and cryptography, 
+    Security tools (Firewalls, SIEM).</p>  
+<p class="duration">Duration: 6 months</p>
+
+<button id="registerBtnCyberSec">Register for this Course</button>
+
+<div id="registrationFormCyberSec" class="centered-form" style="display:none;">
+    <h2>Register Now</h2>
+    <form id="courseRegistration">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+    </div>
+</div>
+
+</div>
+<!--End of courses-->
+
+
+<!--Footer-->
+
+<footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2024 SkaiTech. All rights reserved.</p>
+      <p>
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms of Service</a> |
+        <a href="#">Contact Us</a>
+      </p>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+  
+   
     <script src="script.js"></script>
 </body>
 </html>
