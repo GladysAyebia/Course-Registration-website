@@ -3,14 +3,18 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     overflow-x: hidden;
-}
-
-h1 {
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  h1 {
     color: rgb(110, 172, 227);
     font-size: xx-large;
-}
-
-.nav-bar {
+  }
+  
+  /* Navbar Styling */
+  .nav-bar {
     background-color: #37276c;
     display: flex;
     justify-content: center;
@@ -21,59 +25,90 @@ h1 {
     position: fixed;
     top: 0;
     z-index: 1000;
-}
-
-.nav-links {
+  }
+  
+  .nav-links {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 100px;
-
-}
-
-.nav-links li {
+  }
+  
+  .nav-links li {
     margin-left: 50px;
-}
-
-.nav-links a {
+  }
+  
+  .nav-links a {
     color: white;
     text-decoration: none;
     font-size: 18px;
     padding: 10px;
-    
-}
-
-/* Hover effect for nav links */
-.nav-links a:hover {
+  }
+  
+  /* Hover effect for nav links */
+  .nav-links a:hover {
     background-color: rgba(10, 244, 240, 0.2); /* Highlight on hover */
     border-radius: 5px;
-    padding: 10px;
     color: black;
-}
-
-/* Menu toggle (hamburger menu) */
-.menu-toggle {
-    display: none;
+  }
+  
+  
+  /* Menu toggle container */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
     cursor: pointer;
-
-}
-
-.menu-toggle span {
-    width: 25px;
-    height: 3px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Style for the individual spans */
+  .menu-toggle span {
+    width: 30px;  /* Consistent width for each span */
+    height: 4px;  /* Consistent height for each span */
+    background-color: #ffffff;
+    border-radius: 5px;
     margin: 5px;
-    background: white;
     display: block;
-}
-
-/* Hide the menu toggle on large screens */
-@media (max-width: 768px) {
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
+  }
+  
+  /* When the menu is active, animate the spans */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 5px); /* Top line */
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -5px); /* Bottom line */
+  }
+  
+  /* Optional hover effect */
+  .menu-toggle:hover span:nth-child(1) {
+    background-color:  #aea4cc
+    ;
+  }
+  
+  .menu-toggle:hover span:nth-child(2) {
+    background-color:   #aea4cc;
+  }
+  
+  .menu-toggle:hover span:nth-child(3) {
+    background-color:  #aea4cc;
+  }
+  
+  /* Responsive Navbar */
+  @media (max-width: 768px) {
     .menu-toggle {
         display: block;
         float: right;
     }
-
-    /* Hide the nav links by default on small screens */
+  
     .nav-links {
         display: none;
         flex-direction: column;
@@ -84,33 +119,31 @@ h1 {
         width: 100%;
         padding: 0;
     }
-
+  
     .nav-links li {
         margin: 0;
         padding: 15px 0;
         text-align: center;
     }
-
-    /* Show the nav links when menu toggle is active */
+  
     .nav-links.active {
         display: flex;
     }
-}
-
-.video-container {
+  }
+  
+  /* Video Section */
+  .video-container {
     margin-top: 80px;
     position: relative;
-    margin: 0;
-}
-
-#background-video {
+  }
+  
+  #background-video {
     width: 100%;
-    height: 66vh; /* Takes up 2/3 of the screen height */
+    height: 66vh;
     object-fit: cover;
-    margin: 0;
-}
-
-.overlay-message {
+  }
+  
+  .overlay-message {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -122,213 +155,219 @@ h1 {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.courses{
-top:200px;
-border: 50px;
-grid-row:auto;
-}
-
-.title{
+  }
+  
+  /* Courses Section */
+  .title {
     text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 30px;
-}
-
-
-.course_card{
-border: 50px;
-background-color: rgb(46, 215, 184);
-border-radius: 15px;
-width: 100%;
-height: 30%;
-
-}
-
-.course_img{
-width: 35%;
-position: fill;
-float: left;
-margin: 30px;
-margin-left: 60px;
-}
-img{
-    border-radius: 20px;
-}
-.course_description{
-width: 35%;
-color: #060606;
-float: right;
-justify-content: right;
-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-margin-right: 60px;
-
-}
-
-.divider-horizontal {
+    margin-top: 20px;
+  }
+  
+  
+  /* About Us Section */
+  .about-us {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+  }
+  
+  .about-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-us p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .about-us .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  
+  /* Align course cards to the left */
+  .courses {
+    display: block;
+    padding: 20px;
+  }
+  
+  .course_card {
+    display: flex;
+    background-color: rgb(46, 215, 184);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 800px; /* Adjust width as needed */
+    margin: 20px 0; /* Adds space between cards */
+    margin-left: 5px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  }
+  .course_card:hover {
+    transform: scale(1.05); /* Slightly increase the size */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+  }
+  
+  .course_img {
+    width: 40%;
+    margin-right: 20px;
+  }
+  
+  .course_img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .course_description {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .course_description h2 {
+    margin-top: 0;
+  }
+  
+  .divider-horizontal {
     height: 1px;
     background-color: black;
     margin: 10px 0;
   }
-
-/* Media Queries */
-@media (max-width: 800px) {
-
-    .overlay-message {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        text-align: center;
-        font-size: 15px;
-        font-weight: bold;
-        background: rgba(0, 0, 0, 0.5);
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-    
-
-    .courses{
-        top:100px;
-        border: 50px;
-        justify-content: center;
-
-        }
-        
-        .title{
-            justify-content: center;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-size: 30px;
-        }
-        
-        
-        .course_card{
-        border: 50px;
-        background-color: rgb(46, 215, 184);
-        border-radius: 15px;
-        width: 100%;
-        height: 40%;
-        flex-wrap: wrap;
-        
-        }
-        
-        .course_img{
-        width: 100%;
-        position: fill;
-        float: left;
-        }
-
-        img{
-            border-radius: 20px;
-            width: 100%; 
-            height: 60%; 
-            margin: 0px;
-         }
-        .course_description{
-        width: 80%;
-        position: relative;
-        color: #060606;
-    
-        justify-content:space-around;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        margin: 0px;
-        row-gap: 10px;
-        
-        }
-        
-
-}
-
-
-
-
-button {
+  
+  /* Buttons */
+  button {
     background-color: #4CAF50;
     color: white;
-    padding: 20px 40px;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
-    margin: 50px auto;
     display: block;
-    justify-content: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-button:hover {
+  }
+  
+  button:hover {
     background-color: #50c5bd;
     color: black;
-}
-
-.centered-form {
+  }
+  
+  /* Centered Form */
+  .centered-form {
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
     background-color: gray;
-    padding: 20px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    width: 80%; /* Set width to 90% of the viewport width for responsiveness */
-    max-width: 400px; /* Limit the form's maximum width */
-    margin: 20px auto; /* Center the form */
-    display: none; /* Initially hidden */
-}
-
-input, select {
-    padding: 10px;
-    margin-bottom: 15px;
+    margin: 20px auto;
+  }
+  
+  .centered-form input,
+  .centered-form button {
     width: 100%;
-    box-sizing: border-box;
-}
-
-h2 {
-    text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-button[type="submit"] {
-    width: 30%;
     padding: 10px;
+    padding-left: 0;
+    margin-bottom: 10px;
+  }
+  
+  /* Contact Us Section */
+  .contact-us {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    border-bottom: 3px dotted #eee;
+    margin-top: 90px;
+  }
+  
+  .contact-us .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .contact-us h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333333;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .contact-us form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-us input[type="text"],
+  .contact-us input[type="email"],
+  .contact-us textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .contact-us textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .contact-us input:focus,
+  .contact-us textarea:focus {
+    outline: none;
+    border-color: #50c5bd;
+    box-shadow: 0 0 5px rgba(80, 197, 189, 0.5);
+  }
+  
+  /* Submit Button */
+  .contact-us button[type="submit"] {
     background-color: #4CAF50;
     color: white;
+    padding: 12px 0;
+    font-size: 18px;
+    font-weight: bold;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #56aeae;
-    color: black;
-}
-
-/* Media Queries */
-@media (max-width: 600px) {
-    .centered-form {
-        width: 60%;
-        padding: 15px;
-    }
-
-    input, select, button[type="submit"] {
-        padding: 8px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .centered-form {
-        max-width: 300px;
-    }
-}
-
-.footer {
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-us button[type="submit"]:hover {
+    background-color: #50c5bd;
+  }
+  
+  .contact-us button i {
+    margin-right: 5px;
+  }
+  
+  /* Footer */
+  .footer {
     background-color: #333;
     color: white;
     padding: 20px;
     text-align: center;
-    width: 100%; /* Ensure it spans the width of the page */
-    position: relative; /* Keeps it in place relative to the rest of the page */
-    bottom: 0; /* Sticks the footer to the bottom */
-    box-sizing: border-box; /* Include padding and borders in element's width and height */
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    box-sizing: border-box;
   }
   
   .footer-content a {
@@ -341,26 +380,71 @@ button[type="submit"]:hover {
     margin-top: 10px;
   }
   
-  .social-icons i{
+  .social-icons i {
     width: 24px;
     margin-right: 10px;
     font-size: 20px;
     color: #fcfcfc;
   }
-
-i:hover{
+  
+  i:hover {
     color: #37276c;
   }
   
-  body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh; /* Ensure the body takes up the full height */
-    display: flex;
-    flex-direction: column;
+  /* Media Queries */
+  @media (max-width: 800px) {
+    .overlay-message {
+        font-size: 15px;
+    }
+  
+    .course_img {
+        width: 80%;
+        margin: 0 auto;
+    }
+  
+    img {
+        width: 100%;
+        height: auto;
+    }
+  
+    .course_description {
+        width: 100%;
+        padding: 10px;
+    }
   }
   
-  main {
-    flex: 1; /* Make the main content grow to fill space between the header and footer */
+  @media (max-width: 600px) {
+    .centered-form {
+        width: 60%;
+        padding: 15px;
+    }
+  
+    .contact-us .container {
+        padding: 15px;
+    }
+  
+    .contact-us h2 {
+        font-size: 20px;
+    }
+  
+    .contact-us input[type="text"],
+    .contact-us input[type="email"],
+    .contact-us textarea {
+        font-size: 14px;
+    }
+  
+    .contact-us button[type="submit"] {
+        font-size: 16px;
+    }
+  
+    input, select, button[type="submit"] {
+        padding: 8px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .centered-form {
+        max-width: 300px;
+    }
   }
   
