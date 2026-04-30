@@ -1,249 +1,672 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Sevillana&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SkaiTech - Modern course registration platform offering Web Development, Data Science, Cyber Security and Software Engineering services">
+    <meta name="keywords" content="SkaiTech, course registration, web development, data science, cyber security, software engineering">
+    <meta name="author" content="SkaiTech">
+    <title>SkaiTech - Course Registration & Software Engineering Services</title>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-
-    <!-- Font Awesome CDN link -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
 
-    <nav class="nav-bar">
-        <div class="logo">
-            <h1>SkaiTech</h1>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h1>SkaiTech</h1>
+            </div>
+
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-users"></i> About</a></li>
+                <li><a href="#courses" class="nav-link"><i class="fas fa-graduation-cap"></i> Courses</a></li>
+                <li><a href="#services" class="nav-link"><i class="fas fa-cogs"></i> Services</a></li>
+                <li><a href="#testimonials" class="nav-link"><i class="fas fa-star"></i> Reviews</a></li>
+                <li><a href="#faq" class="nav-link"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
         </div>
-
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li> 
-        <li><a href="#about"><i class="fas fa-users"></i> About</a></li> 
-        <li><a href="#courses"><i class="fas fa-graduation-cap"></i> Courses</a></li> 
-        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Us</a></li> 
-        </ul>
-
     </nav>
 
-    <div class="video-container" id="home">
-        <video id="background-video" loop autoplay muted>
-            <source src="assets/Developer Coding Background.mp4" type="video/mp4">
-        </video>
-        <div class="overlay-message">
-            <p>You can't become a guru overnight. This is a journey of constant practice and a steep learning curve...</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="video-container">
+            <video id="background-video" loop autoplay muted playsinline>
+                <source src="assets/Developer Coding Background.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
         </div>
-    </div>
+        <div class="hero-content">
+            <div class="hero-badge">Trusted by 10,000+ Students</div>
+            <h1 class="hero-title">Transform Your Career with <span class="gradient-text">SkaiTech</span></h1>
+            <p class="hero-subtitle">Master cutting-edge technologies through our industry-leading courses and professional software engineering services.</p>
+            <div class="hero-buttons">
+                <a href="#courses" class="btn btn-primary"><i class="fas fa-rocket"></i> Explore Courses</a>
+                <a href="#services" class="btn btn-outline"><i class="fas fa-briefcase"></i> Our Services</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="1000">0</span>+
+                    <span class="stat-label">Courses</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50000">0</span>+
+                    <span class="stat-label">Students</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="95">0</span>%
+                    <span class="stat-label">Success Rate</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
-
-    <div class="about-us" id="about">
+    <!-- About Us Section -->
+    <section class="about-us" id="about">
         <div class="container">
-          <h2>About Us</h2>
-          <p>Welcome to SkaiTech! We are a passionate team of educators, developers, and tech enthusiasts dedicated to providing top-quality courses and resources to help you achieve your goals.</p>
-          <p>Our mission is to make learning accessible to everyone, from beginners to advanced learners, through easy-to-follow tutorials, hands-on projects, and expert guidance. Whether you're looking to advance your career or learn something new, we're here to help you every step of the way!</p>
-          <p>Join us on this exciting journey and unlock your potential with our comprehensive course offerings!</p>
-        </div>
-      </div>
-
-
-<!--Courses Offered-->
-
-<h2 class="title" id="courses">Courses we offer</h2>
-   
-
-<div class="divider-horizontal"></div>
-<!--Web development-->
-
-
-<div clas="courses">
-
-     <div class="course_card">
-
-        <div class="course_img">
-<img src="assets/WebDev1.png" height="300px" width="520px" >
-        </div>
-
-
-        <div class="course_description">
-    
-    <h2 top="20px">Web Development</h2>        
-    <p class="description"> Description: Learn how to create modern, responsive websites and web applications using HTML, CSS, JavaScript, and frameworks like React or Angular.</p>
-    <p class="skills">Skills:Frontend development (HTML, CSS, JavaScript), Backend development (Node.js, databases), Responsive design, Version control (Git)</p>  
-    <p class="duration">Duration: 6 months</p>
-
-    <button id="registerBtnWebDev">Register for this Course</button>
-
-    <div id="registrationFormWebDev" class="centered-form" style="display:none;">
-        <h2>Register Now</h2>
-        <form id="courseRegistration" action="http://localhost:3000/register" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-        
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-
-        </div>
-    </div>
-
-    
-<!--Data Science-->
-
-
-<div class="course_card">
-
-    <div class="course_img">
-<img src="assets/DataSc.png" height="300px" width="520px" >
-    </div>
-
-
-    <div class="course_description">
-
-<h2 top="20px">Data Science</h2>        
-<p class="description">Description: Understand how to analyze and interpret data, apply machine learning algorithms, and create data-driven solutions.</p>
-<p class="skills">Skills:Data analysis (Python, R, SQL), Machine learning (scikit-learn, TensorFlow), Data visualization (Matplotlib, Seaborn), Statistical modeling</p>  
-<p class="duration">Duration: 6 months</p>
-
-
-<button id="registerBtnDataSci">Register for this Course</button>
-
-<div id="registrationFormDataSci" class="centered-form" style="display:none;">
-    <h2>Register Now</h2>
-    <form id="courseRegistration">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-    
-        <button type="submit">Submit</button>
-    </form>
-</div>
-
-    </div>
-</div>
-
-
-<!--Cyber Security-->
-
-
-<div class="course_card">
-
-    <div class="course_img">
-<img src="assets/CyberSec.png" height="300px" width="520px" >
-    </div>
-
-
-    <div class="course_description">
-
-<h2 top="20px">Cyber Security</h2>        
-<p class="description">Description: Gain knowledge in protecting networks, applications, and data from threats by learning about security principles and ethical hacking. </p>
-<p class="skills">Skills: Network security, 
-    Ethical hacking and penetration testing, 
-    Encryption and cryptography, 
-    Security tools (Firewalls, SIEM).</p>  
-<p class="duration">Duration: 6 months</p>
-
-<button id="registerBtnCyberSec">Register for this Course</button>
-
-<div id="registrationFormCyberSec" class="centered-form" style="display:none;">
-    <h2>Register Now</h2>
-    <form id="courseRegistration">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <button type="submit">Submit</button>
-    </form>
-</div>
-
-    </div>
-</div>
-
-</div>
-<!--End of courses-->
-
-
-<!--Contact US-->
-
-    <div class="contact-us">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div id="map">
-                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.199214977813!2d-0.33546052501497453!3d5.537446094442802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdfbd1ecf8353fd%3A0x39e8842f7a091c1f!2sAccra%20Institute%20of%20Technology%20-%20Seaview%20Campus!5e0!3m2!1sen!2sgh!4v1711744792223!5m2!1sen!2sgh" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                      <!-- You can simply copy and paste "Embed a map" code from Google Maps for any location. -->
-                      
+            <div class="section-header">
+                <span class="section-badge">About Us</span>
+                <h2 class="section-title">Empowering the Next Generation of Tech Leaders</h2>
+                <p class="section-subtitle">We bridge the gap between ambition and achievement</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to <strong>SkaiTech</strong>! We are a passionate team of educators, developers, and tech enthusiasts dedicated to providing top-quality courses and resources to help you achieve your goals.</p>
+                    <p>Our mission is to make learning accessible to everyone, from beginners to advanced learners, through easy-to-follow tutorials, hands-on projects, and expert guidance. Whether you're looking to advance your career or learn something new, we're here to help you every step of the way!</p>
+                    <p>Join us on this exciting journey and unlock your potential with our comprehensive course offerings and professional software engineering services.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Industry-Expert Instructors</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Hands-On Projects</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Career Support</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Flexible Learning</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="section-heading">
-                        <h2>We'll be excited to hear from you! Send us a message.</h2>
-                    
-                    <form id="contact"
-                    action="https://formspree.io/f/xyyrwyya"
-                    method="POST">
-                        <div class="row">
-                          <div class="col-lg-6">
-                            <fieldset>
-                              <input name="name" type="text" id="name" placeholder="Your name" required="">
-                            </fieldset>
-                          </div>
-                          <div class="col-lg-6">
-                            <fieldset>
-                              <input name="email" type="text" id="email" placeholder="Your email" required="">
-                            </fieldset>
-                          </div>
-                          <div class="col-lg-12">
-                            <fieldset>
-                              <textarea name="message" rows="6" id="message" placeholder="Your message" required=""></textarea>
-                            </fieldset>
-                          </div>
-                          <div class="col-lg-12">
-                            <fieldset>
-                              <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
-                          </div>
+                <div class="about-image">
+                    <div class="image-container">
+                        <div class="floating-card card-1">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Learn</span>
                         </div>
-                      </form>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Practice</span>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fas fa-rocket"></i>
+                            <span>Launch</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section" id="courses">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our Courses</span>
+                <h2 class="section-title">Courses We Offer</h2>
+                <p class="section-subtitle">Choose from our industry-leading programs designed to accelerate your career</p>
+            </div>
+
+            <!-- Course Search & Filter -->
+            <div class="course-filter">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="courseSearch" placeholder="Search courses...">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="development">Development</button>
+                    <button class="filter-btn" data-filter="data">Data</button>
+                    <button class="filter-btn" data-filter="security">Security</button>
+                </div>
+            </div>
+
+            <div class="courses-grid">
+                <!-- Web Development -->
+                <div class="course-card" data-category="development">
+                    <div class="course-card-image">
+                        <img src="assets/WebDev1.png" alt="Web Development">
+                        <div class="course-badge">Popular</div>
+                    </div>
+                    <div class="course-card-content">
+                        <div class="course-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p class="course-description">Learn how to create modern, responsive websites and web applications using HTML, CSS, JavaScript, and frameworks like React or Angular.</p>
+                        <div class="course-skills">
+                            <span><i class="fas fa-check"></i> HTML, CSS, JavaScript</span>
+                            <span><i class="fas fa-check"></i> React, Angular</span>
+                            <span><i class="fas fa-check"></i> Node.js, Databases</span>
+                            <span><i class="fas fa-check"></i> Responsive Design</span>
+                        </div>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 6 Months</span>
+                            <span><i class="fas fa-users"></i> 500+ Enrolled</span>
+                        </div>
+                        <button class="btn btn-primary course-register-btn" data-course="Web Development">
+                            <i class="fas fa-user-plus"></i> Register Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Data Science -->
+                <div class="course-card" data-category="data">
+                    <div class="course-card-image">
+                        <img src="assets/DataSc.png" alt="Data Science">
+                        <div class="course-badge">Trending</div>
+                    </div>
+                    <div class="course-card-content">
+                        <div class="course-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Data Science</h3>
+                        <p class="course-description">Understand how to analyze and interpret data, apply machine learning algorithms, and create data-driven solutions.</p>
+                        <div class="course-skills">
+                            <span><i class="fas fa-check"></i> Python, R, SQL</span>
+                            <span><i class="fas fa-check"></i> Machine Learning</span>
+                            <span><i class="fas fa-check"></i> Data Visualization</span>
+                            <span><i class="fas fa-check"></i> Statistical Modeling</span>
+                        </div>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 6 Months</span>
+                            <span><i class="fas fa-users"></i> 350+ Enrolled</span>
+                        </div>
+                        <button class="btn btn-primary course-register-btn" data-course="Data Science">
+                            <i class="fas fa-user-plus"></i> Register Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cyber Security -->
+                <div class="course-card" data-category="security">
+                    <div class="course-card-image">
+                        <img src="assets/CyberSec.png" alt="Cyber Security">
+                        <div class="course-badge">High Demand</div>
+                    </div>
+                    <div class="course-card-content">
+                        <div class="course-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Cyber Security</h3>
+                        <p class="course-description">Gain knowledge in protecting networks, applications, and data from threats by learning about security principles and ethical hacking.</p>
+                        <div class="course-skills">
+                            <span><i class="fas fa-check"></i> Network Security</span>
+                            <span><i class="fas fa-check"></i> Ethical Hacking</span>
+                            <span><i class="fas fa-check"></i> Cryptography</span>
+                            <span><i class="fas fa-check"></i> Security Tools</span>
+                        </div>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 6 Months</span>
+                            <span><i class="fas fa-users"></i> 280+ Enrolled</span>
+                        </div>
+                        <button class="btn btn-primary course-register-btn" data-course="Cyber Security">
+                            <i class="fas fa-user-plus"></i> Register Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-user-graduate"></i>
+                <h2>Register for <span id="modalCourseName"></span></h2>
+            </div>
+            <form id="registrationForm" action="https://formspree.io/f/xyyrwyya" method="POST">
+                <div class="form-group">
+                    <label for="regName"><i class="fas fa-user"></i> Full Name</label>
+                    <input type="text" id="regName" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail"><i class="fas fa-envelope"></i> Email Address</label>
+                    <input type="email" id="regEmail" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPhone"><i class="fas fa-phone"></i> Phone Number</label>
+                    <input type="tel" id="regPhone" name="phone" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="regCourse"><i class="fas fa-graduation-cap"></i> Course</label>
+                    <input type="text" id="regCourse" name="course" readonly>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fas fa-paper-plane"></i> Submit Registration
+                </button>
+            </form>
+            <div id="formMessage" class="form-message"></div>
+        </div>
     </div>
 
-<!--End of Contact US-->
+    <!-- Software Engineering Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our Services</span>
+                <h2 class="section-title">Software Engineering Services</h2>
+                <p class="section-subtitle">We deliver cutting-edge software solutions tailored to your business needs</p>
+            </div>
 
-<!--Footer-->
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Custom Software Development</h3>
+                    <p>Build scalable, robust custom software solutions tailored to your unique business requirements using modern technologies.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Requirements Analysis</li>
+                        <li><i class="fas fa-check"></i> Architecture Design</li>
+                        <li><i class="fas fa-check"></i> Agile Development</li>
+                        <li><i class="fas fa-check"></i> Quality Assurance</li>
+                    </ul>
+                </div>
 
-<footer class="footer">
-    <div class="footer-content">
-      <p>&copy; 2024 SkaiTech. All rights reserved.</p>
-      <p>
-        <a href="#">Privacy Policy</a> |
-        <a href="#">Terms of Service</a> |
-        <a href="#">Contact Us</a>
-      </p>
-    </div>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
-    </div>
-  </footer>
-  
-   
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App Development</h3>
+                    <p>Create powerful iOS and Android applications with intuitive user interfaces and seamless performance.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Native & Cross-Platform</li>
+                        <li><i class="fas fa-check"></i> UI/UX Design</li>
+                        <li><i class="fas fa-check"></i> App Store Deployment</li>
+                        <li><i class="fas fa-check"></i> Maintenance & Support</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Solutions & DevOps</h3>
+                    <p>Migrate to the cloud and implement DevOps practices for faster, more reliable software delivery.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> AWS, Azure, GCP</li>
+                        <li><i class="fas fa-check"></i> CI/CD Pipelines</li>
+                        <li><i class="fas fa-check"></i> Containerization</li>
+                        <li><i class="fas fa-check"></i> Infrastructure as Code</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Engineering & Analytics</h3>
+                    <p>Transform raw data into actionable insights with our comprehensive data engineering and analytics services.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Data Pipeline Design</li>
+                        <li><i class="fas fa-check"></i> ETL Development</li>
+                        <li><i class="fas fa-check"></i> Real-time Analytics</li>
+                        <li><i class="fas fa-check"></i> Data Visualization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity Services</h3>
+                    <p>Protect your digital assets with comprehensive security assessments, penetration testing, and security architecture.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Security Audits</li>
+                        <li><i class="fas fa-check"></i> Penetration Testing</li>
+                        <li><i class="fas fa-check"></i> Compliance Support</li>
+                        <li><i class="fas fa-check"></i> Incident Response</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>IT Consulting & Strategy</h3>
+                    <p>Strategic technology consulting to align your IT infrastructure with business goals and drive digital transformation.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Technology Roadmap</li>
+                        <li><i class="fas fa-check"></i> Digital Transformation</li>
+                        <li><i class="fas fa-check"></i> Process Optimization</li>
+                        <li><i class="fas fa-check"></i> Team Training</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Testimonials</span>
+                <h2 class="section-title">What Our Students Say</h2>
+                <p class="section-subtitle">Real feedback from our successful graduates</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The Web Development course completely transformed my career. I went from knowing nothing to landing a job as a junior developer in just 6 months!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>John Mensah</h4>
+                            <span>Web Development Graduate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The Data Science program was comprehensive and practical. The hands-on projects helped me build a strong portfolio that impressed employers."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Osei</h4>
+                            <span>Data Science Graduate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"SkaiTech's Cyber Security course gave me the skills and certification I needed to advance in my IT career. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Asante</h4>
+                            <span>Cyber Security Graduate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Find answers to common questions about our courses and services</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are the prerequisites for enrolling in a course?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most of our courses are designed for beginners, so no prior experience is required. However, basic computer literacy and familiarity with using the internet are recommended. Specific prerequisites for advanced courses will be listed in the course description.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long do I have access to the course materials?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Once enrolled, you have lifetime access to the course materials, including any future updates. You can learn at your own pace and revisit the content whenever you need.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer certificates upon completion?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Upon successful completion of each course, you will receive a verified certificate from SkaiTech that you can add to your resume and LinkedIn profile.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What software engineering services do you provide?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a comprehensive range of services including custom software development, mobile app development, cloud solutions, data engineering, cybersecurity services, and IT consulting. Contact us for a free consultation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is there any job placement assistance?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide career support services including resume reviews, interview preparation, portfolio building, and job placement assistance to help you land your dream job in tech.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Contact</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">We'd love to hear from you! Send us a message.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.199214977813!2d-0.33546052501497453!3d5.537446094442802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdfbd1ecf8353fd%3A0x39e8842f7a091c1f!2sAccra%20Institute%20of%20Technology%20-%20Seaview%20Campus!5e0!3m2!1sen!2sgh!4v1711744792223!5m2!1sen!2sgh" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Accra Institute of Technology, Seaview Campus</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+233 123 456 789</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@skaitech.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Working Hours</h4>
+                                <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" action="https://formspree.io/f/xyyrwyya" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName"><i class="fas fa-user"></i> Name</label>
+                                <input type="text" id="contactName" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail"><i class="fas fa-envelope"></i> Email</label>
+                                <input type="email" id="contactEmail" name="email" placeholder="Your email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject"><i class="fas fa-tag"></i> Subject</label>
+                            <input type="text" id="contactSubject" name="subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage"><i class="fas fa-comment"></i> Message</label>
+                            <textarea id="contactMessage" name="message" rows="6" placeholder="Your message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                    <div id="contactMessage" class="form-message"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Stay updated with our latest courses, tech tips, and industry insights.</p>
+                </div>
+                <form id="newsletterForm" class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>SkaiTech</h3>
+                        <p>Empowering the next generation of tech leaders through quality education and innovative software solutions.</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Courses</h4>
+                    <ul>
+                        <li><a href="#courses">Web Development</a></li>
+                        <li><a href="#courses">Data Science</a></li>
+                        <li><a href="#courses">Cyber Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Custom Software</a></li>
+                        <li><a href="#services">Mobile Apps</a></li>
+                        <li><a href="#services">Cloud Solutions</a></li>
+                        <li><a href="#services">Cybersecurity</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SkaiTech. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="#">Terms of Service</a>
+                    <span>|</span>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <script src="script.js"></script>
 </body>
 </html>
